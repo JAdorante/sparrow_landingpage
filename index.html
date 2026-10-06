@@ -47,7 +47,6 @@
     --shadow-device:0 2px 4px rgba(0,0,0,.18), 0 32px 64px -24px rgba(16,19,26,.55);
     --radius:14px;
     --radius-lg:18px;
-
     --display:"Archivo","Helvetica Neue",Arial,sans-serif;
     --body:"Newsreader",Georgia,"Times New Roman",serif;
     --mono:"JetBrains Mono",ui-monospace,"SF Mono",Consolas,monospace;
@@ -179,8 +178,11 @@
     content:""; position:absolute; z-index:-1; pointer-events:none; inset:-40% -20vw -20%;
     background:
       radial-gradient(42% 46% at 76% 30%, var(--glow-1), transparent 70%),
-      radial-gradient(28% 32% at 18% 88%, var(--glow-2), transparent 70%);
+      radial-gradient(28% 32% at 18% 72%, var(--glow-2), transparent 70%);
     filter:blur(12px);
+    /* fade out by the hero's bottom edge (87.5% of this box) so the glow never runs under the film */
+    -webkit-mask-image:linear-gradient(to bottom, #000 62%, transparent 86%);
+    mask-image:linear-gradient(to bottom, #000 62%, transparent 86%);
   }
   .hero-grid{display:grid; grid-template-columns:1fr; gap:28px}
   .hero .eyebrow{
@@ -195,6 +197,16 @@
   .hero h1{
     background:linear-gradient(180deg, var(--ink) 30%, var(--ink-2) 160%);
     -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  /* the film's ground is graded to --paper in each theme, so feathering the edges lets it sit in the page unframed */
+  section.film{border-top:0; padding-block:0 clamp(24px,3vw,48px); margin-top:clamp(-48px,-4vw,-24px)}
+  .film video{
+    display:block; width:calc(100% + 2 * var(--gutter)); max-width:none; margin-inline:calc(-1 * var(--gutter));
+    height:auto; aspect-ratio:16 / 9; background:transparent; pointer-events:none;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    mask-composite:intersect;
   }
   .hero .lede{margin-top:24px}
   .hero .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px}
@@ -513,7 +525,12 @@
         </div>
       </div>
     </div>
-
+  </section>
+  <!-- ============ FILM ============ -->
+  <section class="wrap film">
+    <video id="film" autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback
+      data-light="media/sparrow-launch-film.mp4" data-dark="media/sparrow-launch-film-dark.mp4"
+      aria-label="Sparrow film: scattered team chatter becomes one clear message, ending on the line “A nervous system for your company.”"></video>
   </section>
   <!-- ============ FOR TEAMS ============ -->
   <section class="washed" id="teams">
@@ -1302,12 +1319,51 @@
     function onScroll(){ header.classList.toggle("scrolled", window.scrollY > 8); }
     window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
-    var targets = document.querySelectorAll(".sec-head, .hero-grid > div, .boundary, .pagelink, .how-row, .sealed, .rung, .terms > div, .roles .role, form, .status > div, .channels > div, .org-fig, figcaption, .policy");
+    var targets = document.querySelectorAll(".sec-head, .hero-grid > div, .boundary, .pagelink, .how-row, .sealed, .rung, .terms > div, .roles .role, form, .status > div, .channels > div, .org-fig, figcaption, .policy, .film video");
     if (!("IntersectionObserver" in window)){ targets.forEach(function(t){ t.classList.add("in"); }); return; }
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
     }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
     targets.forEach(function(t, i){ t.classList.add("reveal"); t.style.transitionDelay = (i % 3) * 60 + "ms"; io.observe(t); });
+  })();
+
+  // Film: plays on its own, silently, on a loop. Paused while off screen (or on another page) to spare the
+  // CPU. With reduced motion, or if the browser refuses autoplay, it rests on the closing brand frame instead.
+  // There is a light cut and a dark cut; it follows the site theme and swaps in place if the theme changes.
+  (function(){
+    var film = document.getElementById("film");
+    if (!film) return;
+    var resting = false, visible = false;
+    var darkMQ = window.matchMedia("(prefers-color-scheme: dark)");
+    function isDark(){
+      var t = document.documentElement.getAttribute("data-theme");
+      return t ? t === "dark" : darkMQ.matches;
+    }
+    function onMeta(fn){ if (film.readyState >= 1) fn(); else film.addEventListener("loadedmetadata", fn, {once:true}); }
+    function rest(){
+      resting = true; film.pause();
+      onMeta(function(){ film.currentTime = Math.max(0, film.duration - 1.5); });
+    }
+    function play(){ if (resting) return; var p = film.play(); if (p && p.catch) p.catch(rest); }
+    function pickCut(){
+      var src = isDark() ? film.dataset.dark : film.dataset.light;
+      if (film.getAttribute("src") === src) return;
+      var t = film.currentTime;
+      film.src = src;
+      if (resting) return rest();
+      if (t) onMeta(function(){ film.currentTime = t; });
+      if (visible) play();
+    }
+    if (REDUCE){ film.removeAttribute("autoplay"); resting = true; }
+    pickCut();
+    if (resting) rest();
+
+    darkMQ.addEventListener("change", pickCut);
+    new MutationObserver(pickCut).observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+    if (!("IntersectionObserver" in window)) return;
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ visible = e.isIntersecting; if (visible) play(); else film.pause(); });
+    }, {threshold:0.2}).observe(film);
   })();
 
   // Pages: one file, hash-routed so it behaves like separate pages and ports to real ones later.
