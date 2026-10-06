@@ -1,0 +1,29 @@
+{
+  "name": "sparrow-launch-film",
+  "version": "1.0.0",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts SparrowFilm out/sparrow-launch-film.mp4 --crf=16",
+    "still": "remotion still src/index.ts SparrowFilm out/still.png --frame=3900",
+    "preview": "node preview/build.mjs --audio",
+    "score": "python3 audio/score.py",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/instrument-sans": "^5.3.0",
+    "@remotion/cli": "^4.0.527",
+    "@remotion/player": "^4.0.527",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.527"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}
