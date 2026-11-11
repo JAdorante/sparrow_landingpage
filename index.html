@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Sparrow by Ravenry: on-device AI that keeps a team in sync without meetings.">
+<meta name="description" content="Sparrow by Ravenry: a shared memory for your team, with every fact traced to its source. Built to run on-device. Hosted prototype open now.">
 <title>Sparrow</title>
 
 <!-- Twitter Card -->
@@ -498,6 +498,13 @@
   .pagelink .more{margin-top:auto; font-family:var(--display); font-weight:620; font-size:14px; display:inline-flex; align-items:center; gap:6px}
   .pagelink .more::after{content:"→"; transition:transform .3s var(--ease)}
   .pagelink:hover .more::after{transform:translateX(4px)}
+  .stand-note{
+    margin-top:22px; max-width:68ch; padding:16px 18px;
+    border:1px solid var(--rule-strong); border-radius:var(--radius);
+    color:var(--ink-2); font-size:16px; line-height:1.55;
+  }
+  .stand-note b{color:var(--ink); font-family:var(--display); font-weight:620; font-size:14px; letter-spacing:.02em}
+  .stand-note a{color:var(--accent); text-decoration:underline; text-underline-offset:3px}
   .ladder-wrap{max-width:720px}
   @media (max-width:820px){ .pagelinks{grid-template-columns:1fr} }
   /* ---------- reveal on scroll: opt-in via JS so the page reads fine without it ---------- */
@@ -519,9 +526,9 @@
     <ul>
       <li><a href="#/how" data-link="how">How it works</a></li>
       <li><a href="#/device" data-link="device">Why on-device</a></li>
-      <li><a href="#/partners" data-link="partners">Design partners</a></li>
+      <li><a href="#/partners" data-link="partners">30-day demo</a></li>
     </ul>
-    <a class="btn btn-primary btn-sm" href="#/partners">Become a design partner</a>
+    <a class="btn btn-primary btn-sm" href="#/partners">Book a 30-day demo</a>
   </nav>
 </header>
 
@@ -531,11 +538,11 @@
   <section class="wrap hero" style="border-top:0">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">On-device AI for teams <b>·</b> Design partner program, fall 2026</span>
+        <span class="eyebrow">AI memory for teams <b>·</b> 30-day demos open</span>
         <h1 style="margin-top:22px">A nervous system for your company.</h1>
-        <p class="lede measure">Sparrow runs on each person's own machine. It learns their work as it happens, notices blockers early, and tells whoever can clear them exactly what they need to know. The raw record stays where it was read, which is why it can be trusted to know so much.</p>
+        <p class="lede measure">Every fact Sparrow remembers is traced to its source. It notices blockers early and tells whoever can clear them exactly what they need to know. Sparrow is built to run on each person's own machine, so the raw record can stay where it was read. Today's prototype is hosted, so you can try it now.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#/partners">Become a design partner</a>
+          <a class="btn btn-primary" href="#/partners">Book a 30-day demo</a>
           <a class="btn btn-ghost" href="#/how">See how it works</a>
         </div>
       </div>
@@ -590,7 +597,7 @@
         <span class="eyebrow">What Sparrow does</span>
         <h2>It reads what you let it see, then tells the one person who needs to know.</h2>
       </div>
-      <p class="lede">Sparrow lives on each person's laptop and picks up their work as it happens. When something matters to someone else, it drafts the message, you approve it, and that's all that leaves.</p>
+      <p class="lede">Sparrow is designed to live on each person's laptop and picks up their work as it happens. When something matters to someone else, it drafts the message, you approve it, and that's all that leaves.</p>
     </div>
     <figure>
       <div class="boundary">
@@ -633,7 +640,7 @@
     <div class="pagelinks">
       <a class="pagelink" href="#/how"><span class="eyebrow">How it works</span><h3>It learns your work, decides what matters, and passes on only that.</h3><span class="more">Read how</span></a>
       <a class="pagelink" href="#/device"><span class="eyebrow">Why on-device</span><h3>Let a local AI know everything about your work. Let no company know it.</h3><span class="more">Read why</span></a>
-      <a class="pagelink" href="#/partners"><span class="eyebrow">Design partners</span><h3>We are taking three teams this fall.</h3><span class="more">Apply</span></a>
+      <a class="pagelink" href="#/partners"><span class="eyebrow">30-day demo</span><h3>Thirty days on real work, with one shared, sourced memory for your team.</h3><span class="more">Book a demo</span></a>
     </div>
   </section>
 </div>
@@ -650,7 +657,7 @@
         <div class="step">
           <span class="n">What it learns</span>
           <h3>A map of your work</h3>
-          <p>Sparrow reads what you let it see: meetings, your screen, the tools you already use. From that it keeps a map of your work and who is in it. The map stays on your laptop.</p>
+          <p>Sparrow reads what you let it see: meetings, your screen, the tools you already use. From that it keeps a map of your work and who is in it. In the on-device product, the map stays on your laptop.</p>
         </div>
         <figure class="how-fig">
           <svg viewBox="0 26 480 228" style="max-width:400px; margin:0 auto" role="img" aria-label="Maya at the centre with the people, tools, and projects in her work around her.">
@@ -712,11 +719,11 @@
       <div class="how-row">
         <div class="step">
           <span class="n">What it hands off</span>
-          <h3>Bigger jobs, minus the sensitive parts</h3>
-          <p>For a task that needs a bigger model, Sparrow sends just that task, with names, numbers, and recordings removed first. The model does the work. Your Sparrow keeps the picture.</p>
+          <h3>Cloud help, only if you turn it on</h3>
+          <p>Cloud escalation is off unless you add your own API key. When you do, Sparrow sends just that task, with names, numbers, and recordings removed first. The model does the work. Your Sparrow keeps the picture.</p>
         </div>
         <figure class="how-fig">
-          <svg viewBox="0 0 480 170" role="img" aria-label="Maya's Sparrow sends one redacted task to a frontier model and gets the result back.">
+          <svg viewBox="0 0 480 170" role="img" aria-label="Maya's Sparrow can send one redacted task to your cloud model when you turn it on with your own API key, and get the result back.">
             <defs>
               <marker id="harr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/></marker>
               <marker id="harr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor" fill-opacity=".5"/></marker>
@@ -725,8 +732,9 @@
 <path d="M2 9.5 C 7 4.5, 14 3, 22 1.5 C 18 6, 15.5 9.5, 13 12.5 L 16.5 14 L 11 15.5 C 8.5 18.5, 6.5 20.5, 4.5 22 C 5.5 18, 6 14.5, 5 11.5 Z" fill="var(--accent-fg)" transform="translate(68 88)"/>
 <text x="80" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing=".6" fill="var(--accent)">Maya's Sparrow</text>
 <rect x="320" y="46" width="140" height="108" rx="14" fill="var(--paper-2)" stroke="var(--rule-strong)" stroke-width="1.5"/>
-<text x="390" y="96" text-anchor="middle" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="currentColor">Frontier model</text>
-<text x="390" y="116" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".6">sees only the slice</text>
+<text x="390" y="90" text-anchor="middle" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="600" fill="currentColor">Your cloud model</text>
+<text x="390" y="110" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".6">optional · your key</text>
+<text x="390" y="128" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".6">sees only the slice</text>
 <line x1="108" y1="86" x2="312" y2="86" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#harr2)"/>
 <rect x="188" y="71" width="44" height="30" rx="3" fill="var(--card)" stroke="var(--accent)" stroke-width="1.3"/><rect x="196" y="78" width="20" height="2.5" rx="1" fill="currentColor" fill-opacity=".45"/><rect x="196" y="84.5" width="28" height="4" rx="1" fill="var(--ink)"/><rect x="196" y="92" width="14" height="2.5" rx="1" fill="currentColor" fill-opacity=".45"/>
 <text x="210" y="61" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing=".6" fill="var(--accent)">ONE TASK</text>
@@ -819,7 +827,7 @@
         <span class="eyebrow">Where it is going: machines too</span>
         <h2>Your systems can report in too.</h2>
         </div>
-      <p class="lede">Your GPU queue, your CI, your nightly jobs. We are building Sparrow to read them the way it reads a meeting, through an integration, an API, or the screen itself, so that when a job fails at 2 a.m., only the one person who can fix it hears about it. Design partners with a shared cluster will shape this first.</p>
+      <p class="lede">Your GPU queue, your CI, your nightly jobs. We are building Sparrow to read them the way it reads a meeting, through an integration, an API, or the screen itself, so that when a job fails at 2 a.m., only the one person who can fix it hears about it.</p>
     </div>
   </section>
 </div>
@@ -831,15 +839,16 @@
         <span class="eyebrow">Why on-device</span>
         <h2>Let a local AI know everything about your work. Let no company know it.</h2>
       </div>
-      <p class="lede">Sparrow learns from the raw record on your laptop, so it can know more about you than any cloud assistant safely could. When it needs outside help, it sends one redacted slice: no names, no numbers, no recordings, just the context the question needs.</p>
+      <p class="lede">Sparrow learns from the raw record on your laptop, so it can know more about you than any cloud assistant safely could. Cloud help is off unless you add your own API key. When you do, it sends one redacted slice: no names, no numbers, no recordings, just the context the question needs.</p>
+      <p class="stand-note"><b>Where this stands.</b> Today's prototype is hosted. The on-device product is what this page describes as the destination. See the <a href="#/privacy">privacy policy</a> for how each works.</p>
     </div>
     <div class="sealed">
       <div class="device-head">
         <span class="seal"><i aria-hidden="true"></i>Your machine</span>
-        <span>no Ravenry server holds any of this</span>
+        <span>no Ravenry server holds any of this by design</span>
       </div>
       <figure class="boundary-fig">
-        <svg viewBox="0 0 740 310" role="img" aria-label="Recordings, transcripts, memory, and the people graph sit on the laptop's own storage. Two things can leave, each as one redacted slice: a message to a teammate's Sparrow, or a task for a frontier model. Nothing connects the laptop to Ravenry, which has no server.">
+        <svg viewBox="0 0 740 310" role="img" aria-label="Recordings, transcripts, memory, and the people graph sit on the laptop's own storage. Two things can leave, each as one redacted slice: a message to a teammate's Sparrow, or—only if you turn it on with your own API key—a task for your cloud model. Nothing connects the laptop to Ravenry by design.">
           <defs>
             <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
               <path d="M0 0 L10 5 L0 10 z" fill="var(--device-accent)"/>
@@ -869,7 +878,7 @@
           <rect x="456" y="35" width="280" height="62" rx="6" fill="var(--device-2)" stroke="var(--device-accent)" stroke-opacity=".7" stroke-width="1.5"/>
           <text x="472" y="59" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">A teammate's Sparrow</text>
           <text x="472" y="79" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".7">Only what they need, under rules you set.</text>
-          <!-- to a frontier model -->
+          <!-- to your cloud model · optional · your key -->
           <line x1="306" y1="160" x2="446" y2="160" stroke="var(--device-accent)" stroke-width="1.5" marker-end="url(#arr)"/>
           <g transform="translate(360 146)">
             <rect x="0" y="0" width="42" height="28" rx="3" fill="var(--device-2)" stroke="var(--device-accent)" stroke-width="1.2"/>
@@ -877,19 +886,19 @@
             <rect x="7" y="13" width="28" height="4" rx="1" fill="#000"/>
             <rect x="7" y="20" width="14" height="2.5" rx="1" fill="currentColor" fill-opacity=".5"/>
           </g>
-          <text x="381" y="191" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="var(--device-accent)">ONE TASK</text>
+          <text x="381" y="191" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="var(--device-accent)">ONE TASK · OPT-IN</text>
           <rect x="456" y="129" width="280" height="62" rx="6" fill="var(--device-2)" stroke="var(--device-accent)" stroke-opacity=".7" stroke-width="1.5"/>
-          <text x="472" y="153" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">A frontier model, for heavy lifting</text>
-          <text x="472" y="173" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".7">A hard question or an approved task. Capped.</text>
+          <text x="472" y="153" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="600" fill="currentColor">Your cloud model · optional · your key</text>
+          <text x="472" y="173" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".7">Off unless you add a key. Then capped.</text>
           <!-- Ravenry: no line at all -->
           <text x="381" y="258" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="currentColor" fill-opacity=".45">NOTHING</text>
           <rect x="456" y="223" width="280" height="62" rx="6" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="4 4"/>
           <text x="472" y="247" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="13.5" font-weight="600" fill="currentColor" fill-opacity=".8">Ravenry</text>
           <text x="472" y="267" font-family="Newsreader, Georgia, serif" font-size="12" fill="currentColor" fill-opacity=".7">No server. No copy. Nothing to read or lose.</text>
         </svg>
-        <figcaption>Everything Sparrow learns is written to your own disk. What leaves is one redacted slice at a time: a message to a teammate, or a task for a frontier model. Nothing comes to us.</figcaption>
+        <figcaption>Everything Sparrow learns is written to your own disk. What leaves is one redacted slice at a time: a message to a teammate, or—only if you turn it on—a task for your cloud model. Nothing comes to us by design.</figcaption>
       </figure>
-      <div class="redact" aria-label="What Sparrow heard versus what the frontier model was sent">
+      <div class="redact" aria-label="What Sparrow heard versus what your cloud model was sent, when cloud help is turned on">
         <div class="redact-card">
           <span class="eyebrow">What Sparrow heard, on the laptop</span>
           <p>“<mark>Priya</mark> said <mark>Acme’s</mark> renewal slips if login isn’t done by <mark>Oct 3</mark>. That’s <mark>$240k</mark>.”</p>
@@ -897,7 +906,7 @@
         </div>
         <div class="redact-mid" aria-hidden="true"><span>redacted, then sent</span><span class="line"></span></div>
         <div class="redact-card redact-out">
-          <span class="eyebrow">What the frontier model was sent</span>
+          <span class="eyebrow">What your cloud model was sent · if you turn it on</span>
           <p>“A two-week delay on a login feature may affect a customer renewal deadline. Draft a one-line note to the account owner.”</p>
           <small>Name, company, date, and amount removed.</small>
         </div>
@@ -905,11 +914,11 @@
       <div class="reasons">
         <div>
           <h3>Nothing to breach</h3>
-          <p>Transcripts, screens, and notes stay on the laptop they came from. There is no central copy to leak, subpoena, or sell. <em>There is no copy for us to read, and none for your employer either.</em></p>
+          <p>On-device, transcripts, screens, and notes stay on the laptop they came from. There is no central copy to leak, subpoena, or sell. <em>There is no copy for us to read, and none for your employer either.</em></p>
         </div>
         <div>
           <h3>Built to run small</h3>
-          <p>A model distilled for one job, understanding one person's work, costs a fraction of a frontier model per token. <em>We are training that model now.</em> Today the reasoning runs through a frontier model, sent only a redacted slice of the record, under a cap you set. The recordings never go.</p>
+          <p>Sparrow 1.0 reasons with its own models today. Cloud help is opt-in: add your own API key and Sparrow sends only a redacted slice under a spend cap you set. The recordings never go. <em>We are training a smaller model so more of that work can stay on the laptop.</em></p>
         </div>
         <div>
           <h3>A person approves every action</h3>
@@ -917,7 +926,7 @@
         </div>
         <div>
           <h3>Delete it all, and get a receipt</h3>
-          <p>Stop capture in one click. Delete everything in one more, and get a receipt naming every directory that was emptied. A deleted memory is gone everywhere it ever existed, because it only ever existed in one place.</p>
+          <p>On-device, stop capture in one click. Delete everything in one more, and get a receipt naming every directory that was emptied. A deleted memory is gone everywhere it ever existed, because it only ever existed in one place.</p>
         </div>
       </div>
     </div>
@@ -927,37 +936,37 @@
   <section class="wrap">
     <div class="ladder-wrap">
         <span class="eyebrow" style="display:block; margin-bottom:14px">What runs where</span>
-        <div class="ladder" aria-label="How work is escalated from the local model to a frontier model">
+        <div class="ladder" aria-label="How work stays on your laptop, and can escalate to your cloud model only if you turn it on">
           <div class="rung local">
             <span class="eyebrow">On your laptop</span>
             <h3>Your Sparrow</h3>
             <p>Recording, transcription, who-said-what, memory, and search all run here, on an ordinary CPU. No GPU, no server.</p>
           </div>
-          <div class="gap" aria-hidden="true"><span class="dash"></span><span>for work that is still too big for the laptop</span><span class="dash"></span></div>
+          <div class="gap" aria-hidden="true"><span class="dash"></span><span>only if you turn it on with your own key</span><span class="dash"></span></div>
           <div class="rung">
-            <span class="eyebrow">In the cloud, when needed</span>
-            <h3>A frontier model, working for your Sparrow</h3>
-            <p>It gets one redacted slice, filtered by your rules, under a spend cap you set. Never the recordings. As the small model we're training gets better, more of this moves back onto the laptop.</p>
+            <span class="eyebrow">In the cloud, only if you turn it on</span>
+            <h3>Your cloud model, working for your Sparrow</h3>
+            <p>Off unless you add your own API key. Then it gets one redacted slice, filtered by your rules, under a spend cap you set. Never the recordings. As the small model we're training gets better, more of this moves back onto the laptop.</p>
           </div>
         </div>
       </div>
   </section>
 </div>
 <div class="page" data-page="partners">
-  <!-- ============ PARTNERS ============ -->
+  <!-- ============ 30-DAY DEMO ============ -->
   <section class="wrap" id="partners">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Design partners</span>
-        <h2>We are taking three teams this fall.</h2>
+        <span class="eyebrow">30-day demo</span>
+        <h2>Thirty days on real work, then your honest verdict.</h2>
       </div>
-      <p class="lede">Small teams doing real work with real deadlines, ideally with something that already coordinates badly: a shared cluster, a distributed team, a manager stretched across too many threads.</p>
+      <p class="lede">For teams with real deadlines: a distributed team, a stretched manager, a firm and its portfolio companies—anywhere coordination already costs you.</p>
     </div>
     <div class="terms">
       <div>
         <h3>What you get</h3>
         <ul>
-          <li>A founder on every install call.</li>
+          <li>A founder on every setup call.</li>
           <li>A direct line, answered the same day.</li>
           <li>Fifteen minutes a week, and a readout at the end.</li>
           <li>A say in what gets built next.</li>
@@ -974,7 +983,7 @@
       <div>
         <h3>What we promise</h3>
         <ul>
-          <li>Your data never reaches us. We built no way to receive it.</li>
+          <li>Today's prototype is hosted. The on-device product is built so your team's work data never reaches Ravenry.</li>
           <li>Stop in one click. Delete in one more, with a receipt.</li>
           <li>Leave whenever you want. No explanation needed.</li>
         </ul>
@@ -994,7 +1003,7 @@
           <option>More than 50</option>
         </select>
       </label>
-      <label class="full">What breaks in your team's coordination today?<textarea name="pain" placeholder="The standup that runs long, the cluster nobody knows the state of, the manager who is the only one who knows what everyone is doing…"></textarea></label>
+      <label class="full">What breaks in your team's coordination today?<textarea name="pain" placeholder="The standup that runs long, the number nobody can source before a review, the manager who is the only one who knows what everyone is doing…"></textarea></label>
       <div class="full form-foot">
         <button class="btn btn-primary" type="submit">Send to the founders</button>
         <small>Opens your email app with this filled in.<br>Nothing you type here is stored on this page.</small>
@@ -1010,15 +1019,15 @@
         <h2>A working prototype, shaped by the teams who use it first.</h2>
       </div>
       <div>
-        <p class="lede">Sparrow runs today on our own machines. So far that's the only place it has run, which is what the design partner program is for. Windows first, macOS next.</p>
+        <p class="lede">Sparrow runs today as a hosted prototype. The on-device product is what we are building next.</p>
         <div class="status">
           <div>
             <span class="eyebrow" style="display:block; margin-bottom:10px">Working today</span>
-            <p>Capture from meetings and the screen. A searchable memory where every fact links to the moment it came from. A graph of people, commitments, and open loops. Two assistants paired so one can ask the other, under each person's disclosure rules. Actions in the browser and on the desktop that stop for approval. One-click stop, export, and delete with a receipt.</p>
+            <p>Documents, uploads, and connected tools, including a Claude connector. A searchable memory where every fact links to the moment it came from. A graph of people, commitments, and open loops. Two assistants paired so one can ask the other, under each person's disclosure rules. Actions that stop for approval. One-click stop, export, and delete with a receipt.</p>
           </div>
           <div>
             <span class="eyebrow" style="display:block; margin-bottom:10px">Being built now</span>
-            <p>The distilled model that moves the reasoning onto the device. Integrations with the machines a team depends on. The flow of priorities down and status up across an organization. These are the decisions design partners get a say in.</p>
+            <p>Sparrow 1.0, the on-device release, and the records that make a team's shared memory durable across people and time. These are the decisions demo teams get a say in.</p>
           </div>
         </div>
       </div>
@@ -1032,33 +1041,43 @@
     <div class="policy">
       <span class="eyebrow">Legal</span>
       <h2>Privacy Policy</h2>
-      <p class="meta">Effective September 22, 2026 · Ravenry · contact@ravenry.us</p>
+      <p class="meta">Effective November 11, 2026 · Ravenry · contact@ravenry.us</p>
 
-      <p>This policy describes how Ravenry (“we,” “us”) handles information when you visit <a href="https://ravenry.us">ravenry.us</a> and when you use Sparrow, our on-device team-sync product. It also explains how Sparrow accesses, uses, stores, and shares Google user data when you connect a Google account.</p>
+      <p>This policy describes how Ravenry (“we,” “us”) handles information when you visit <a href="https://ravenry.us">ravenry.us</a>, when you use the hosted Sparrow prototype, and when you use the on-device Sparrow product. It also explains how Sparrow accesses, uses, stores, and shares Google user data when you connect a Google account.</p>
 
       <h3>Who we are</h3>
-      <p>Sparrow is made by Ravenry. Sparrow runs on each person's computer. Our product promise is that Ravenry does not operate a server that receives or holds your team's work data. Questions about this policy: <a href="mailto:contact@ravenry.us">contact@ravenry.us</a>.</p>
+      <p>Sparrow is made by Ravenry. Sparrow is built to run on each person's computer. Today you can also use a hosted prototype while that on-device product is completed. Questions about this policy: <a href="mailto:contact@ravenry.us">contact@ravenry.us</a>.</p>
 
       <h3>This website</h3>
       <p>The marketing site is a static page. We do not run analytics cookies, advertising trackers, or an account system on the site.</p>
       <ul>
-        <li><b>Design-partner form.</b> Submitting the form opens your email app with a draft to contact@ravenry.us. Nothing you type is stored by this website. If you send the email, we receive whatever you chose to include (name, work email, company, team size, and your message) so we can reply about the design-partner program.</li>
+        <li><b>30-day demo form.</b> Submitting the form opens your email app with a draft to contact@ravenry.us. Nothing you type is stored by this website. If you send the email, we receive whatever you chose to include (name, work email, company, team size, and your message) so we can reply about a 30-day demo.</li>
         <li><b>Fonts.</b> The site loads fonts from Google Fonts. Your browser may contact Google's servers to fetch those files. That request is governed by Google's policies, not by Ravenry.</li>
         <li><b>Hosting.</b> The site is hosted on Cloudflare. Cloudflare may process standard technical request data (such as IP address and user agent) to deliver the page and protect the service.</li>
       </ul>
 
+      <h3>The hosted prototype</h3>
+      <!-- TODO(Ravenry): confirm hosting provider, credential storage, encryption, retention, and deletion flow against the running app before relying on this language for OAuth review. -->
+      <p>The hosted prototype runs on Ravenry-operated servers so teams can try Sparrow before the on-device product ships. When you create an account, we process the account information you provide (such as name and email) and the work content you upload or connect so the product can function.</p>
+      <ul>
+        <li><b>Account data.</b> We store account credentials and profile details needed to sign you in and contact you about the prototype.</li>
+        <li><b>Server-side storage.</b> Memory, documents, uploads, and connected-tool data you use in the prototype may be stored on our servers for as long as your account remains active, so the product can search, source facts, and sync across your team.</li>
+        <!-- TODO(Ravenry): name the hosting provider, encryption at rest/in transit, retention windows, and the exact delete/export path users get in the prototype. -->
+        <li><b>Controls.</b> You can stop using the prototype and request deletion of account and stored content by contacting <a href="mailto:contact@ravenry.us">contact@ravenry.us</a>, and through in-product controls where the prototype provides them.</li>
+      </ul>
+
       <h3>Sparrow on your device</h3>
-      <p>When you install Sparrow, capture, memory, and reasoning stay on your machine unless you approve something leaving. You control what Sparrow may see (for example meetings, screen content, or connected tools). You can stop capture, export your data, and delete it, including a deletion receipt where the product provides one.</p>
-      <p>Ravenry does not receive your on-device work graph, transcripts, or screen content through Sparrow's normal operation. We have not built a path for that data to reach us.</p>
+      <p>When you install the on-device product, capture, memory, and reasoning stay on your machine unless you approve something leaving. You control what Sparrow may see (for example meetings, screen content, or connected tools). You can stop capture, export your data, and delete it, including a deletion receipt where the product provides one.</p>
+      <p>Ravenry does not receive your on-device work graph, transcripts, or screen content through the on-device product's normal operation. That path is built so that data does not reach us.</p>
 
       <h3>Google user data</h3>
-      <p>If you connect Google (for example Google Docs, Google Calendar, or other Google Workspace services Sparrow supports), Sparrow requests access through Google's OAuth consent screen. We request only the scopes needed for features you use.</p>
+      <p>If you connect Google (for example Google Docs, Google Calendar, or other Google Workspace services Sparrow supports), Sparrow requests access through Google's OAuth consent screen. We request only the scopes needed for features you use. This applies to both the hosted prototype and the on-device product.</p>
       <ul>
-        <li><b>Access.</b> With your authorization, Sparrow reads Google user data you choose to connect—such as document contents or metadata, calendar events, and related account identifiers—so it can notice coordination-relevant facts on your device.</li>
-        <li><b>Use.</b> Google user data is used only to provide and improve user-facing Sparrow features that are visible in the product: local memory and search, drafting messages for your approval, and syncing status with teammates under rules you set. We do not use Google user data for advertising, credit decisions, or sale to data brokers.</li>
-        <li><b>Storage.</b> Google user data obtained through Sparrow is stored on your device (and, where the product offers it, in exports you create). Ravenry does not store your Google user data on Ravenry servers.</li>
-        <li><b>Sharing.</b> Google user data does not leave your device except when you approve an outbound action (for example a redacted message to a teammate's Sparrow, or a capped task to a frontier model). We do not transfer Google user data to third parties for their independent use.</li>
-        <li><b>Revocation.</b> You can disconnect Google access in Sparrow and in your Google Account permissions. After disconnect, Sparrow stops new access; you can delete locally stored copies as the product allows.</li>
+        <li><b>Access.</b> With your authorization, Sparrow reads Google user data you choose to connect—such as document contents or metadata, calendar events, and related account identifiers—so it can notice coordination-relevant facts in the product you are using (on-device or hosted).</li>
+        <li><b>Use.</b> Google user data is used only to provide and improve user-facing Sparrow features that are visible in the product: memory and search with sources, drafting messages for your approval, and syncing status with teammates under rules you set. We do not use Google user data for advertising, credit decisions, or sale to data brokers.</li>
+        <li><b>Storage.</b> On-device, Google user data obtained through Sparrow is stored on your device (and, where the product offers it, in exports you create). In the hosted prototype, that data may also be stored on Ravenry servers as needed to operate the service for your account.</li>
+        <li><b>Sharing.</b> Google user data does not leave Sparrow except when you approve an outbound action (for example a redacted message to a teammate's Sparrow, or—only if you turn on cloud help with your own API key—a capped task to your cloud model). We do not transfer Google user data to third parties for their independent use.</li>
+        <li><b>Revocation.</b> You can disconnect Google access in Sparrow and in your Google Account permissions. After disconnect, Sparrow stops new access; you can delete stored copies on-device or in the hosted prototype as each product allows.</li>
       </ul>
 
       <h3>Google API Services User Data Policy — Limited Use</h3>
@@ -1085,8 +1104,8 @@
 
 <footer class="wrap">
   <a class="wordmark" href="#/"><span class="eye" aria-hidden="true"></span>SPARROW<span class="by">by Ravenry</span></a>
-  <nav aria-label="Footer"><a href="#/how">How it works</a> · <a href="#/device">Why on-device</a> · <a href="#/partners">Design partners</a> · <a href="#/privacy">Privacy</a></nav>
-  <span>© 2026 Ravenry · no Ravenry server holds your team's data.</span>
+  <nav aria-label="Footer"><a href="#/how">How it works</a> · <a href="#/device">Why on-device</a> · <a href="#/partners">30-day demo</a> · <a href="#/privacy">Privacy</a></nav>
+  <span>© 2026 Ravenry · built to run on-device · prototype hosted.</span>
 </footer>
 
 <script>
@@ -1384,7 +1403,7 @@
   // Pages: one file, hash-routed so it behaves like separate pages and ports to real ones later.
   (function(){
     var pages = document.querySelectorAll(".page");
-    var titles = {home:"Sparrow", how:"How it works · Sparrow", device:"Why on-device · Sparrow", partners:"Design partners · Sparrow"};
+    var titles = {home:"Sparrow", how:"How it works · Sparrow", device:"Why on-device · Sparrow", partners:"30-day demo · Sparrow"};
     function show(){
       var name = (location.hash.replace(/^#\/?/, "") || "home").split(/[?#]/)[0];
       if (!document.querySelector('.page[data-page="' + name + '"]')) name = "home";
@@ -1397,7 +1416,7 @@
     show();
   })();
 
-  // Design-partner form: compose an email, store nothing.
+  // 30-day demo form: compose an email, store nothing.
   var form = document.getElementById("partner-form");
   var sent = document.getElementById("sent");
   form.addEventListener("submit", function(ev){
@@ -1410,7 +1429,7 @@
       form.querySelector("[name=" + missing[0] + "]").focus();
       return;
     }
-    var subject = "Design partner: " + f.get("company") + " (" + f.get("size") + " people)";
+    var subject = "30-day demo: " + f.get("company") + " (" + f.get("size") + " people)";
     var body = [
       "Name: " + f.get("name"),
       "Email: " + f.get("email"),
